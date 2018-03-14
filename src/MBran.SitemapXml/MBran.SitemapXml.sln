@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.SitemapXml", "MBran.SitemapXml.csproj", "{ED023638-C5D5-4174-98DD-2907A0FB128A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.SitemapXml.Test", "..\MBran.SitemapXml.Test\MBran.SitemapXml.Test.csproj", "{4E391F76-B5F7-4D00-9017-0CE258DA66AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED023638-C5D5-4174-98DD-2907A0FB128A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED023638-C5D5-4174-98DD-2907A0FB128A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED023638-C5D5-4174-98DD-2907A0FB128A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED023638-C5D5-4174-98DD-2907A0FB128A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E391F76-B5F7-4D00-9017-0CE258DA66AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E391F76-B5F7-4D00-9017-0CE258DA66AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E391F76-B5F7-4D00-9017-0CE258DA66AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E391F76-B5F7-4D00-9017-0CE258DA66AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6CDA2AD9-E65A-4A08-AE67-1EAC4E3C82A4}
+	EndGlobalSection
+EndGlobal
