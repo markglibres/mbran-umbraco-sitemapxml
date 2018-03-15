@@ -42,5 +42,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\MBran.SitemapXml\sitemap.controller.js" />
+    <Content Include="App_Plugins\MBran.SitemapXml\sitemap.css" />
+    <Content Include="App_Plugins\MBran.SitemapXml\sitemap.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Plugins\MBran.SitemapXml\package.manifest" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

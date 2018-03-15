@@ -248,6 +248,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\MBran.SitemapXml\sitemap.controller.js" />
+    <Content Include="App_Plugins\MBran.SitemapXml\sitemap.css" />
+    <Content Include="App_Plugins\MBran.SitemapXml\sitemap.html" />
     <Content Include="config\imageprocessor\security.config" />
     <Content Include="config\imageprocessor\processing.config" />
     <Content Include="config\imageprocessor\cache.config" />
@@ -270,6 +273,7 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
+    <Content Include="App_Plugins\MBran.SitemapXml\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -323,6 +327,12 @@
     <Analyzer Include="..\MBran.SitemapXml\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\MBran.SitemapXml\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MBran.SitemapXml\MBran.SitemapXml.csproj">
+      <Project>{ed023638-c5d5-4174-98dd-2907a0fb128a}</Project>
+      <Name>MBran.SitemapXml</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -359,6 +369,9 @@
   </Target>
   <Import Project="..\MBran.SitemapXml\packages\AutoMapper.3.3.1\tools\AutoMapper.targets" Condition="Exists('..\MBran.SitemapXml\packages\AutoMapper.3.3.1\tools\AutoMapper.targets')" />
   <Import Project="..\MBran.SitemapXml\packages\UmbracoCms.7.7.7\build\UmbracoCms.targets" Condition="Exists('..\MBran.SitemapXml\packages\UmbracoCms.7.7.7\build\UmbracoCms.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /s /y $(SolutionDir)src\MBran.SitemapXml\App_Plugins $(ProjectDir)App_Plugins</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

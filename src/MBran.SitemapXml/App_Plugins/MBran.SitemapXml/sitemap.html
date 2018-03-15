@@ -1,0 +1,51 @@
+﻿<div ng-controller="MBran.SitemapXml.SitemapController">
+    <div class="mbran-sitemapxml">
+        <div class="umb-property">
+            <div class="control-group umb-control-group">
+                <label class="control-label">Hide from sitemap</label>
+                <input type="checkbox"/>
+            </div>
+            <div class="control-group umb-control-group">
+                <label class="control-label">Change frequency</label>
+                <div class="controls">
+                    <div class="umb-property-editor ng-scope">
+                        <div class="slider slider-horizontal">
+                            <div class="slider-track" ng-click="clickFrequency($event)">
+                                <div class="slider-track-low" style="left: 0px; width: 0%;"></div>
+                                <div class="slider-selection" style="left: 0%; width: 16.6667%;"></div>
+                                <div class="slider-track-high" style="right: 0px; width: 83.3333%;"></div>
+                                <div class="slider-handle min-slider-handle round" tabindex="0" style="left: 16.6667%;"></div>
+                                <div class="slider-handle max-slider-handle round hide" tabindex="0" style="left: 0%;"></div>
+                            </div>
+                            <div class="tooltip tooltip-main top" style="left: 16.6667%; margin-left: -11px;">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner">1</div>
+                            </div>
+                            <div class="tooltip tooltip-min top" style="display: none;">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner"></div>
+                            </div>
+                            <div class="tooltip tooltip-max top" style="display: none;">
+                                <div class="tooltip-arrow"></div>
+                                <div class="tooltip-inner"></div>
+                            </div>
+                            <div class="slider-tick-label-container">
+                                <div class="slider-tick-label">always</div>
+                                <div class="slider-tick-label">hourly</div>
+                                <div class="slider-tick-label">daily</div>
+                                <div class="slider-tick-label">weekly</div>
+                                <div class="slider-tick-label">monthly</div>
+                                <div class="slider-tick-label">yearly</div>
+                                <div class="slider-tick-label">never</div>
+                            </div>
+                        </div>
+                        <input type="text" name="slider" class="slider-item" data-value="1" value="1" style="display: none;">
+                    </div>
+                </div>
+            </div>
+            <div class="control-group umb-control-group">
+                <label class="control-label">Priority</label>
+            </div>
+        </div>
+    </div>
+</div>

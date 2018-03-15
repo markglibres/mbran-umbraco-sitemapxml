@@ -1,0 +1,17 @@
+﻿{
+  propertyEditors: [
+    {
+      alias: 'MBran.SitemapXml',
+      name: 'Sitemap Xml',
+      editor: {
+        view: '~/App_Plugins/MBran.SitemapXml/sitemap.html' 
+      }
+    }
+  ],
+  javascript: [
+    '~/App_Plugins/MBran.SitemapXml/sitemap.controller.js'
+  ],
+  css: [
+    '~/App_Plugins/MBran.SitemapXml/sitemap.css'
+  ]
+}

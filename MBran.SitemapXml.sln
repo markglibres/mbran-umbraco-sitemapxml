@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.SitemapXml", "MBran.SitemapXml.csproj", "{ED023638-C5D5-4174-98DD-2907A0FB128A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.SitemapXml", "src\MBran.SitemapXml\MBran.SitemapXml.csproj", "{ED023638-C5D5-4174-98DD-2907A0FB128A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.SitemapXml.Test", "..\MBran.SitemapXml.Test\MBran.SitemapXml.Test.csproj", "{4E391F76-B5F7-4D00-9017-0CE258DA66AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBran.SitemapXml.Test", "src\MBran.SitemapXml.Test\MBran.SitemapXml.Test.csproj", "{4E391F76-B5F7-4D00-9017-0CE258DA66AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
