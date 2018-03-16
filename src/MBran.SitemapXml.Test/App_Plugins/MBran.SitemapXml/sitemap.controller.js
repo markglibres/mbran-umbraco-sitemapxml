@@ -1,17 +1,29 @@
 ﻿angular.module('umbraco')
-    .controller('MBran.SitemapXml.SitemapController', function ($scope) {
+    .controller('MBran.SitemapXml.SitemapController', function ($scope, $element, assetsService, angularHelper) {
         $scope.model.hideLabel = true;
+        
 
         if (!$scope.model.value) {
             $scope.model.value = {};
         }
+        $scope.model.value.priority = 3;
         $scope.frequencySlider = {};
+        $scope.prioritySlider = {};
 
         $scope.clickFrequency = function(event) {
 
             var itemIndex = getItemIndex(event, $scope.frequencies);
             var sliderPosition = getSliderPosition(itemIndex, $scope.frequencies);
             setFrequencySliderPosition(sliderPosition);
+        };
+
+        $scope.clickPriority = function (event) {
+
+            console.log(event.offsetX);
+            var itemIndex = getItemIndex(event, $scope.priorities);
+            var sliderPosition = getSliderPosition(itemIndex, $scope.priorities);
+            
+            setPrioritySliderPosition(sliderPosition);
         };
 
         $scope.isPriority = function(priority) {
@@ -33,7 +45,6 @@
 
             var priority = 0;
             while (priority < 1) {
-                console.log(priority);
                 $scope.priorities.push({ value: priority, text: priority });
                 priority = +(priority + 0.1).toFixed(2);
             }
@@ -56,7 +67,8 @@
             
             var itemPercent = 100 / sliderItems.length;
             var width = event.currentTarget.clientWidth;
-            var clickedX = event.clientX - width - event.currentTarget.offsetLeft;
+            var clickedX = event.offsetX; //event.clientX - width - event.currentTarget.offsetLeft;
+            console.log(clickedX);
             var clickedPercentage = (clickedX / width) * 100;
             var itemIndex = Math.ceil(clickedPercentage / itemPercent);
             return itemIndex;
@@ -81,5 +93,43 @@
             $scope.frequencySlider.right = position.right + '%';
         }
 
+        function setPrioritySliderPosition(position) {
+
+            $scope.prioritySlider.left = position.left + '%';
+            $scope.prioritySlider.right = position.right + '%';
+        }
+
         init();
+
+        function createPrioritySlider() {
+            var slider = $element.find('.priority-slider-item').bootstrapSlider({
+                ticks: "[1, 2, 3]",
+                ticks_labels: '["short", "medium", "long"]',
+                min:1,
+                max:3,
+                step:1,
+                value: $scope.model.value.priority,
+                tooltip:"hide"
+            }).on('slideStop', function (e) {
+                var value = e.value;
+                angularHelper.safeApply($scope, function () {
+                    $scope.model.value.priority = value;
+                });
+            }).data('slider');
+        }
+
+        assetsService
+            .loadJs("~/Umbraco/lib/slider/js/bootstrap-slider.js")
+            .then(function () {
+
+                createPrioritySlider();
+
+                $scope.model.value.priority.onValueChanged = function (newVal, oldVal) {
+                    if (newVal != oldVal) {
+                        createPrioritySlider();
+                    }
+                };
+
+            });
+
     });

@@ -28,11 +28,7 @@
                 <label class="control-label">Priority</label>
                 <div class="controls">
                     <div class="umb-property-editor ng-scope">
-                        <div class="slider slider-horizontal priority-slider" ng-click="clickPriority($event)">
-                            <div class="slider-tick-label-container">
-                                <div class="slider-tick-label" ng-repeat="priorityItem in priorities" ng-show="isPriority(priorityItem.value)">{{ priorityItem.text }}</div>
-                            </div>
-                        </div>
+                        <input type="text" name="priority-slider" data-provide="slider" class="priority-slider-item" />
                     </div>
                 </div>
             </div>
