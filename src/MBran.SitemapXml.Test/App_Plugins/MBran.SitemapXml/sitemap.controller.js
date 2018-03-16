@@ -1,5 +1,7 @@
 ﻿angular.module('umbraco')
     .controller('MBran.SitemapXml.SitemapController', function ($scope) {
+        $scope.model.hideLabel = true;
+
         if (!$scope.model.value) {
             $scope.model.value = {};
         }
@@ -25,24 +27,22 @@
 
             $scope.itemPercent = 100 / $scope.frequencies.length;
 
-            var defaultPosition = getSliderPosition(0);
+            var defaultPosition = getSliderPosition(3);
             setSliderPosition(defaultPosition);
         }
 
         function getItemIndex(event) {
             
-            var width = event.currentTarget.scrollWidth;
-            var clickedX = event.offsetX ? event.offsetX : (event.originalEvent.layerX ? event.originalEvent.layerX : event.x);
-            
+            var width = event.currentTarget.clientWidth;
+            var clickedX = event.clientX - width - event.currentTarget.offsetLeft;
             var clickedPercentage = (clickedX / width) * 100;
             var itemIndex = Math.ceil(clickedPercentage / $scope.itemPercent);
-            
             return itemIndex;
         }
 
         function getSliderPosition(itemIndex) {
-            var left = (itemIndex * $scope.itemPercent) + ($scope.itemPercent / 2);
 
+            var left = (itemIndex * $scope.itemPercent) - ($scope.itemPercent / 2);
             return {
                 left: left,
                 right: 100-left
