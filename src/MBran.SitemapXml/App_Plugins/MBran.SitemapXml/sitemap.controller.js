@@ -5,13 +5,13 @@
         if (!$scope.model.value) {
             $scope.model.value = {};
         }
-        $scope.slider = {};
+        $scope.frequencySlider = {};
 
         $scope.clickFrequency = function(event) {
 
-            var itemIndex = getItemIndex(event);
-            var sliderPosition = getSliderPosition(itemIndex);
-            setSliderPosition(sliderPosition);
+            var itemIndex = getItemIndex(event, $scope.frequencies);
+            var sliderPosition = getSliderPosition(itemIndex, $scope.frequencies);
+            setFrequencySliderPosition(sliderPosition);
         };
 
         function init() {
@@ -25,34 +25,38 @@
                 { value: 6, text: 'Never' },
             ];
 
-            $scope.itemPercent = 100 / $scope.frequencies.length;
 
-            var defaultPosition = getSliderPosition(3);
-            setSliderPosition(defaultPosition);
+            var defaultPosition = getSliderPosition(3, $scope.frequencies);
+            setFrequencySliderPosition(defaultPosition);
         }
 
-        function getItemIndex(event) {
+        function getItemIndex(event, sliderItems) {
             
+            var itemPercent = 100 / sliderItems.length;
             var width = event.currentTarget.clientWidth;
             var clickedX = event.clientX - width - event.currentTarget.offsetLeft;
             var clickedPercentage = (clickedX / width) * 100;
-            var itemIndex = Math.ceil(clickedPercentage / $scope.itemPercent);
+            var itemIndex = Math.ceil(clickedPercentage / itemPercent);
             return itemIndex;
         }
 
-        function getSliderPosition(itemIndex) {
+        function getSliderPosition(itemIndex, sliderItems) {
 
-            var left = (itemIndex * $scope.itemPercent) - ($scope.itemPercent / 2);
+            var itemPercent = 100 / sliderItems.length;
+            var left = 0;
+            if (itemIndex === sliderItems.length) left = 100;
+            else if (itemIndex > 0) left = (itemIndex * itemPercent) - (itemPercent / 2);
+
             return {
                 left: left,
                 right: 100-left
             };
         }
 
-        function setSliderPosition(position) {
+        function setFrequencySliderPosition(position) {
 
-            $scope.slider.left = position.left + '%';
-            $scope.slider.right = position.right + '%';
+            $scope.frequencySlider.left = position.left + '%';
+            $scope.frequencySlider.right = position.right + '%';
         }
 
         init();
