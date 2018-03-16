@@ -7,3 +7,7 @@
     width: 450px;
 }
 
+.mbran-sitemapxml .slider-tick-label.ng-hide {
+    display: block !important;
+    visibility: hidden;
+}

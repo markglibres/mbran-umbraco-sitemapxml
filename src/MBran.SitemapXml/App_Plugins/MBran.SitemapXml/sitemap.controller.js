@@ -14,6 +14,10 @@
             setFrequencySliderPosition(sliderPosition);
         };
 
+        $scope.isPriority = function(priority) {
+            return $scope.model.value.priority === priority;
+        }
+
         function init() {
             $scope.frequencies = [
                 { value: 0, text: 'Always' },
@@ -25,8 +29,26 @@
                 { value: 6, text: 'Never' },
             ];
 
+            $scope.priorities = [];
 
-            var defaultPosition = getSliderPosition(3, $scope.frequencies);
+            var priority = 0;
+            while (priority < 1) {
+                console.log(priority);
+                $scope.priorities.push({ value: priority, text: priority });
+                priority = +(priority + 0.1).toFixed(2);
+            }
+            
+                
+            if (!$scope.model.value.frequency) {
+                $scope.model.value.frequency = 2;
+            }
+            if (!$scope.model.value.priority) {
+                $scope.model.value.priority = 0.5;
+            }
+
+            $scope.priority = $scope.model.value.priority;
+
+            var defaultPosition = getSliderPosition($scope.model.value.frequency + 1, $scope.frequencies);
             setFrequencySliderPosition(defaultPosition);
         }
 

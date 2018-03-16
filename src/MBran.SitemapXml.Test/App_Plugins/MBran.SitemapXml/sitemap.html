@@ -21,12 +21,20 @@
                                 <div class="slider-tick-label" ng-repeat="freq in frequencies" >{{ freq.text }}</div>
                             </div>
                         </div>
-                        <input type="text" name="slider" class="slider-item" data-value="1" value="1" style="display: none;">
                     </div>
                 </div>
             </div>
             <div class="control-group umb-control-group">
                 <label class="control-label">Priority</label>
+                <div class="controls">
+                    <div class="umb-property-editor ng-scope">
+                        <div class="slider slider-horizontal priority-slider" ng-click="clickPriority($event)">
+                            <div class="slider-tick-label-container">
+                                <div class="slider-tick-label" ng-repeat="priorityItem in priorities" ng-show="isPriority(priorityItem.value)">{{ priorityItem.text }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
