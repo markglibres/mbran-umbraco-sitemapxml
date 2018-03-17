@@ -1,4 +1,5 @@
 ﻿using System;
+using MBran.SitemapXml.Models;
 using Newtonsoft.Json;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
@@ -11,7 +12,7 @@ namespace MBran.SitemapXml.ValueConverter
     {
         public bool IsConverter(PublishedPropertyType propertyType)
         {
-            return propertyType.PropertyEditorAlias.Equals("MBran.SitemapXml",
+            return propertyType.PropertyEditorAlias.Equals(SitemapConstants.PropertyAlias,
                 StringComparison.InvariantCultureIgnoreCase);
         }
 

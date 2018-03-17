@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace MBran.SitemapXml.ValueConverter
+namespace MBran.SitemapXml.Models
 {
     [DataContract]
     public class SitemapOptions

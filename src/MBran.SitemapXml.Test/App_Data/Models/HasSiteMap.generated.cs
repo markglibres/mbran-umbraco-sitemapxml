@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Web;
+using MBran.SitemapXml.Models;
 using MBran.SitemapXml.ValueConverter;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.PublishedContent;
