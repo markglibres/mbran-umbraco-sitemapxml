@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
@@ -22,14 +23,8 @@ namespace MBran.SitemapXml
 
         public object ConvertSourceToObject(PublishedPropertyType propertyType, object source, bool preview)
         {
-            var propertyValue = JObject.Parse(source as string);
-            
-            return new SitemapOptions
-            {
-                Exclude = propertyValue["exclude"]?.Value<bool>() ?? false,
-                Frequency = (SitemapFrequency)(propertyValue["frequency"]?.Value<int>() ?? (int)SitemapFrequency.Daily),
-                Priority = propertyValue["priority"]?.Value<double>() ?? 0.5
-            };
+            var option = JsonConvert.DeserializeObject<SitemapOptions>(source as string);
+            return option;
         }
 
         public object ConvertSourceToXPath(PublishedPropertyType propertyType, object source, bool preview)
