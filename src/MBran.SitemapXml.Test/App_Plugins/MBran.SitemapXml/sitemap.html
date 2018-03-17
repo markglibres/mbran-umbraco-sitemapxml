@@ -1,36 +1,21 @@
-﻿<div ng-controller="MBran.SitemapXml.SitemapController">
-    <div class="mbran-sitemapxml">
-        <div class="umb-property">
-            <div class="control-group umb-control-group">
-                <label class="control-label">Exclude</label>
-                <input type="checkbox"/>
+﻿<div class="umb-property mbran-sitemapxml" ng-controller="MBran.SitemapXml.SitemapController">
+    <div class="control-group umb-control-group">
+        <label class="control-label">Exclude from sitemap</label>
+        <input type="checkbox"/>
+    </div>
+    <div class="control-group umb-control-group frequency-slider">
+        <label class="control-label">Sitemap frequency</label>
+        <div class="controls">
+            <div class="umb-property-editor ng-scope">
+                <input type="text" name="frequency-slider" class="frequency-slider-item" />
             </div>
-            <div class="control-group umb-control-group">
-                <label class="control-label">Frequency</label>
-                <div class="controls">
-                    <div class="umb-property-editor ng-scope">
-                        <div class="slider slider-horizontal frequency-slider" ng-click="clickFrequency($event)">
-                            <div class="slider-track">
-                                <div class="slider-track-low" style="left: 0px; width: 0%;"></div>
-                                <div class="slider-selection" style="left: 0%; width: {{ frequencySlider.left }};"></div>
-                                <div class="slider-track-high" style="right: 0px; width: {{ frequencySlider.right }};"></div>
-                                <div class="slider-handle min-slider-handle round" tabindex="0" style="left:  {{ frequencySlider.left }};"></div>
-                                <div class="slider-handle max-slider-handle round hide" tabindex="0" style="left: 0%;"></div>
-                            </div>
-                            <div class="slider-tick-label-container">
-                                <div class="slider-tick-label" ng-repeat="freq in frequencies" >{{ freq.text }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="control-group umb-control-group">
-                <label class="control-label">Priority</label>
-                <div class="controls">
-                    <div class="umb-property-editor ng-scope">
-                        <input type="text" name="priority-slider" data-provide="slider" class="priority-slider-item" />
-                    </div>
-                </div>
+        </div>
+    </div>
+    <div class="control-group priority-slider">
+        <label class="control-label">Sitemap priority</label>
+        <div class="controls">
+            <div class="umb-property-editor ng-scope">
+                <input type="text" name="priority-slider" class="priority-slider-item" />
             </div>
         </div>
     </div>

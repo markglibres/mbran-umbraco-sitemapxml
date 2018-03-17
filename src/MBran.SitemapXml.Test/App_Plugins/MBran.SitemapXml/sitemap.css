@@ -1,13 +1,18 @@
-﻿.mbran-sitemapxml .slider-tick-label {
-    width: 54px;
-    padding: 0 5px 0 5px;
+﻿.mbran-sitemapxml .frequency-slider .slider-tick-label-container {
+    margin-left: -33.3333px !important;
 }
 
-.mbran-sitemapxml .slider.slider-horizontal.frequency-slider {
-    width: 450px;
+.mbran-sitemapxml .frequency-slider .slider-tick-label {
+    width: 66.6667px !important;
 }
 
-.mbran-sitemapxml .slider-tick-label.ng-hide {
-    display: block !important;
-    visibility: hidden;
+.mbran-sitemapxml .frequency-slider .slider.slider-horizontal {
+    margin-bottom: 24px !important;
 }
+
+
+.mbran-sitemapxml .priority-slider {
+    margin-top: 30px;
+}
+
+
