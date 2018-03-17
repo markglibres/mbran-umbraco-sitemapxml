@@ -1,10 +1,9 @@
 ﻿using System;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.PropertyEditors;
 
-namespace MBran.SitemapXml
+namespace MBran.SitemapXml.ValueConverter
 {
     [PropertyValueType(typeof(SitemapOptions))]
     [PropertyValueCache(PropertyCacheValue.All, PropertyCacheLevel.Content)]

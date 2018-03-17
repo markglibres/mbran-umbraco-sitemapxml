@@ -1,4 +1,4 @@
-﻿namespace MBran.SitemapXml
+﻿namespace MBran.SitemapXml.ValueConverter
 {
     public enum SitemapFrequency
     {

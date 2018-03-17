@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Web;
+using MBran.SitemapXml.ValueConverter;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
@@ -67,7 +68,7 @@ namespace Umbraco.Web.PublishedContentModels
 		/// sitemapOption
 		///</summary>
 		[ImplementPropertyType("sitemapOption")]
-		public MBran.SitemapXml.SitemapOptions SitemapOption
+		public SitemapOptions SitemapOption
 		{
 			get { return Umbraco.Web.PublishedContentModels.HasSiteMap.GetSitemapOption(this); }
 		}

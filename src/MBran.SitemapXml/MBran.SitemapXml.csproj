@@ -207,9 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SitemapOptions.cs" />
-    <Compile Include="SitemapFrequency.cs" />
-    <Compile Include="SitemapValueConverter.cs" />
+    <Compile Include="ValueConverter\SitemapOptions.cs" />
+    <Compile Include="ValueConverter\SitemapFrequency.cs" />
+    <Compile Include="ValueConverter\SitemapValueConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Plugins\MBran.SitemapXml\sitemap.controller.js" />

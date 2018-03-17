@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Web;
+using MBran.SitemapXml.ValueConverter;
 using Umbraco.Core.Models;
 using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
@@ -25,7 +26,7 @@ namespace Umbraco.Web.PublishedContentModels
 	public partial interface IHasSiteMap : IPublishedContent
 	{
 		/// <summary>sitemapOption</summary>
-		MBran.SitemapXml.SitemapOptions SitemapOption { get; }
+		SitemapOptions SitemapOption { get; }
 	}
 
 	/// <summary>_HasSiteMap</summary>
@@ -57,12 +58,12 @@ namespace Umbraco.Web.PublishedContentModels
 		/// sitemapOption
 		///</summary>
 		[ImplementPropertyType("sitemapOption")]
-		public MBran.SitemapXml.SitemapOptions SitemapOption
+		public SitemapOptions SitemapOption
 		{
 			get { return GetSitemapOption(this); }
 		}
 
 		/// <summary>Static getter for sitemapOption</summary>
-		public static MBran.SitemapXml.SitemapOptions GetSitemapOption(IHasSiteMap that) { return that.GetPropertyValue<MBran.SitemapXml.SitemapOptions>("sitemapOption"); }
+		public static SitemapOptions GetSitemapOption(IHasSiteMap that) { return that.GetPropertyValue<SitemapOptions>("sitemapOption"); }
 	}
 }
