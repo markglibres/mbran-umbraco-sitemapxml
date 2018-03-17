@@ -17,12 +17,17 @@
         }
 
         function initModel() {
+            
             if (!$scope.model.value) {
-                $scope.model.value = {};
+                $scope.model.value = {
+                    priority: 0.5,
+                    frequency: 2,
+                    exclude: false
+                };
             }
-
-            $scope.model.value.priority = $scope.model.value.priority ? parseFloat($scope.model.value.priority) : 0.5;
-            $scope.model.value.frequency = $scope.model.value.frequency ? parseInt($scope.model.value.frequency) : 2;
+            
+            $scope.model.value.priority = parseFloat($scope.model.value.priority);
+            $scope.model.value.frequency = parseInt($scope.model.value.frequency);
         }
 
         function initSliders() {
@@ -34,6 +39,7 @@
                     $scope.model.value.frequency.onValueChanged = function (newVal, oldVal) {
                         if (newVal !== oldVal) {
                             createFrequencySlider();
+
                         }
                     };
 
