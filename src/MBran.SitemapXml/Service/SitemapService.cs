@@ -44,8 +44,7 @@ namespace MBran.SitemapXml.Service
         public SitemapOptions GetSitemapOptions(IPublishedContent content)
         {
             return content.HasProperty(SitemapConstants.PropertyName)
-                ? JsonConvert.DeserializeObject<SitemapOptions>(
-                    content.GetPropertyValue<string>(SitemapConstants.PropertyName))
+                ? content.GetPropertyValue<SitemapOptions>(SitemapConstants.PropertyName)
                 : null;
         }
 

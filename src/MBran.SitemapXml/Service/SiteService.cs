@@ -28,10 +28,10 @@ namespace MBran.SitemapXml.Service
             var domainService = ApplicationContext.Current.Services.DomainService;
 
             return domainService
-                       .GetAll(true)
+                       ?.GetAll(true)
                        .FirstOrDefault(domain => domain.DomainName.Equals(HttpContext.Current.Request.Url.Host,
                            StringComparison.InvariantCultureIgnoreCase))
-                       ?.Id ?? 0;
+                       ?.Id ?? _umbracoHelper.TypedContentAtRoot().FirstOrDefault()?.Id ?? 0;
         }
     }
 }

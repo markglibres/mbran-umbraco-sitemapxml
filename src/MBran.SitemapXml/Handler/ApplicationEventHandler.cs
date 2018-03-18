@@ -19,7 +19,7 @@ namespace MBran.SitemapXml.Handler
                 "sitemap",
                 new
                 {
-                    controller = "SiteMap",
+                    controller = "SitemapXml",
                     action = "Index"
                 });
         }

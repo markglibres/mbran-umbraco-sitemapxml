@@ -5,9 +5,11 @@ namespace MBran.SitemapXml.Models
 {
     public class SitemapXmlItem
     {
-        [XmlElement("loc")] public string Location { get; set; }
+        [XmlElement("loc")]
+        public string Location { get; set; }
 
-        [XmlIgnore] public DateTime LastModified { get; set; }
+        [XmlIgnore]
+        public DateTime LastModified { get; set; }
 
         [XmlElement("lastmod")]
         public string LastModifiedString
@@ -16,7 +18,15 @@ namespace MBran.SitemapXml.Models
             set => LastModified = DateTime.Parse(value);
         }
 
-        [XmlElement("changefreq")] public SitemapFrequency ChangeFrequency { get; set; }
+        [XmlElement("changefreq")]
+        public string ChangeFrequencyString { get; set; }
+
+        [XmlIgnore]
+        public SitemapFrequency ChangeFrequency
+        {
+            get => (SitemapFrequency) Enum.Parse(typeof(SitemapFrequency), ChangeFrequencyString);
+            set => ChangeFrequencyString = Enum.GetName(typeof(SitemapFrequency), value)?.ToLower();
+        }
 
         [XmlElement("priority")] public double Priority { get; set; }
     }
