@@ -25,13 +25,16 @@ namespace MBran.SitemapXml.Service
 
         public int GetDomainRootId()
         {
+            var domainName = HttpContext.Current.Request.Url.Host;
             var domainService = ApplicationContext.Current.Services.DomainService;
 
-            return domainService
+            return (domainService
                        ?.GetAll(true)
-                       .FirstOrDefault(domain => domain.DomainName.Equals(HttpContext.Current.Request.Url.Host,
+                       .FirstOrDefault(domain => domain.DomainName.Equals(domainName,
                            StringComparison.InvariantCultureIgnoreCase))
-                       ?.Id ?? _umbracoHelper.TypedContentAtRoot().FirstOrDefault()?.Id ?? 0;
+                       ?.RootContentId.GetValueOrDefault()) 
+                   ?? _umbracoHelper.TypedContentAtRoot().FirstOrDefault()?.Id 
+                   ?? 0;
         }
     }
 }

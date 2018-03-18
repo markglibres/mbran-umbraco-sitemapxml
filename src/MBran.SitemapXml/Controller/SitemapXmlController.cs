@@ -15,7 +15,7 @@ namespace MBran.SitemapXml.Controller
             _sitemapService = new SitemapService();
         }
 
-        [OutputCache(NoStore = true, Duration = 3600, VaryByParam = "none")]
+        [OutputCache(NoStore = true, Duration = 3600, VaryByParam = "none", VaryByHeader = "host")]
         public virtual ActionResult Index()
         {
             var sitemap = _sitemapService.GetSitemalXmlString();

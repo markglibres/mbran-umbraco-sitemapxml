@@ -23,7 +23,7 @@ namespace MBran.SitemapXml.Service
         {
             var option = GetSitemapOptions(content);
 
-            return option != null
+            return option != null && !option.Exclude
                 ? new SitemapXmlItem
                 {
                     Location = content.UrlAbsolute(),
@@ -44,7 +44,11 @@ namespace MBran.SitemapXml.Service
         public SitemapOptions GetSitemapOptions(IPublishedContent content)
         {
             return content.HasProperty(SitemapConstants.PropertyName)
-                ? content.GetPropertyValue<SitemapOptions>(SitemapConstants.PropertyName)
+                ? content.GetPropertyValue<SitemapOptions>(SitemapConstants.PropertyName) 
+                  ?? new SitemapOptions
+                  {
+                      Exclude = false, Frequency = SitemapFrequency.Daily, Priority = 0.5
+                  }
                 : null;
         }
 
