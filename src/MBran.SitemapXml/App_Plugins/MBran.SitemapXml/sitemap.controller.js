@@ -88,7 +88,8 @@
                 max: ticks[ticks.length-1],
                 step: 1,
                 value: $scope.model.value.frequency,
-                tooltip: "hide"
+                tooltip: "hide",
+                reversed: true
             }).on('slideStop', function (e) {
                 var value = e.value;
                 angularHelper.safeApply($scope, function () {
