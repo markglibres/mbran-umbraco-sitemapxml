@@ -1,5 +1,5 @@
 # MBran Sitemap XML
-MBran SitemapXml is a package to auto-generate sitemap xml on these simple steps:
+MBran SitemapXml is an Umbraco package to auto-generate sitemap xml on these simple steps:
 
 [1]: https://our.umbraco.org/projects/backoffice-extensions/mbran-sitemap-xml/ "Umbraco Package Link"
 [2]: https://www.nuget.org/packages/MBran.SitemapXml/ "NuGet Package Link"
