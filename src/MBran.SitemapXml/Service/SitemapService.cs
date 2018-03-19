@@ -3,6 +3,7 @@ using System.Linq;
 using MBran.SitemapXml.Models;
 using MBran.SitemapXml.Service.Interface;
 using Newtonsoft.Json;
+using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
@@ -38,7 +39,7 @@ namespace MBran.SitemapXml.Service
         {
             return _siteService.GetDomainRoot()
                 .DescendantsOrSelf()
-                .Where(node => node.HasProperty(SitemapConstants.PropertyName));
+                .Where(node => node.HasProperty(SitemapConstants.PropertyName) && node.TemplateId > 0);
         }
 
         public SitemapOptions GetSitemapOptions(IPublishedContent content)
@@ -58,11 +59,12 @@ namespace MBran.SitemapXml.Service
             {
                 Items = GetSitemapPages()
                     .Select(GetSitemapXmlItem)
+                    .Where(sitemap => sitemap != null)
                     .ToList()
             };
         }
 
-        public string GetSitemalXmlString()
+        public string GetSitemapXmlString()
         {
             var sitemap = GetSitemapXml();
             return this._xmlSerializer.ToXmlString(sitemap);

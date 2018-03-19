@@ -10,6 +10,6 @@ namespace MBran.SitemapXml.Service.Interface
         SitemapOptions GetSitemapOptions(IPublishedContent content);
         SitemapXmlItem GetSitemapXmlItem(IPublishedContent content);
         SitemapXmlRoot GetSitemapXml();
-        string GetSitemalXmlString();
+        string GetSitemapXmlString();
     }
 }
