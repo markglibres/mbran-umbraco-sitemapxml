@@ -1,6 +1,4 @@
-﻿using System;
-using System.Web.Hosting;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MBran.SitemapXml.Service;
 using MBran.SitemapXml.Service.Interface;
 using Umbraco.Web.Mvc;
@@ -17,7 +15,7 @@ namespace MBran.SitemapXml.Controller
             _sitemapService = new SitemapService();
         }
 
-        [OutputCache(Duration = 3600 , VaryByHeader = "host")]
+        [OutputCache(NoStore = true, Duration = 300, VaryByHeader = "host")]
         public virtual ActionResult Index()
         {
             var sitemap = _sitemapService.GetSitemapXmlString();
