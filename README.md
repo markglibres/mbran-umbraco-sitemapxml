@@ -23,3 +23,5 @@ MBran SitemapXml is an Umbraco package to auto-generate sitemap xml on these sim
 * Sitemap protocol format with UTF-8 encoding
 * Universal last modified date with time offset
 * Default values for: priority (0.5) and frequency (daily)
+* Skip pages without templates even if sitemap property has values
+* Cache duration of 5 minutes
