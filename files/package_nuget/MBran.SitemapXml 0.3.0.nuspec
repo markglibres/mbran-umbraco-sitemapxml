@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MBran.SitemapXml</id>
+    <version>0.3.0</version>
+    <title>MBran Umbraco Sitemap Xml</title>
+    <authors>Mark Gil Libres</authors>
+    <owners>Mark Gil Libres</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/markglibres/mbran-umbraco-sitemapxml/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/markglibres/mbran-umbraco-sitemapxml</projectUrl>
+    <description>An Umbraco package that generates sitemap xml</description>
+    <copyright></copyright>
+    <tags>umbraco, "umbraco sitemap"</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="UmbracoCms.Core" version="7.7.7" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="content\App_Plugins\MBran.SitemapXml\package.manifest" target="content\App_Plugins\MBran.SitemapXml\package.manifest" />
+    <file src="content\App_Plugins\MBran.SitemapXml\sitemap.controller.js" target="content\App_Plugins\MBran.SitemapXml\sitemap.controller.js" />
+    <file src="content\App_Plugins\MBran.SitemapXml\sitemap.css" target="content\App_Plugins\MBran.SitemapXml\sitemap.css" />
+    <file src="content\App_Plugins\MBran.SitemapXml\sitemap.html" target="content\App_Plugins\MBran.SitemapXml\sitemap.html" />
+    <file src="lib\net452\MBran.SitemapXml.dll" target="lib\net452\MBran.SitemapXml.dll" />
+  </files>
+</package>
